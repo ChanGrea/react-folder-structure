@@ -38,7 +38,12 @@ const Footer = styled.footer`
 `
 
 const PageTemplate = ({
-  header, hero, sponsor, children, footer, ...props
+  header,
+  hero,
+  sponsor,
+  children,
+  footer,
+  ...props
 }) => {
   return (
     <Wrapper {...props}>

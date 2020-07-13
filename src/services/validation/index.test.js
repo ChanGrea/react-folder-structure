@@ -58,39 +58,58 @@ test('createValidator', () => {
 
   expect(typeof validator).toBe('function')
 
-  expect(validator({
-    email: '',
-    password: '',
-    passwordRepeat: null,
-  })).toEqual({
-    email: v.required(''),
-    password: v.required(''),
-    passwordRepeat: v.match('a')('c', { a: 'b' }),
-  }, 'Expected to follow the validation order')
+  expect(
+    validator({
+      email: '',
+      password: '',
+      passwordRepeat: null,
+    }),
+  ).toEqual(
+    {
+      email: v.required(''),
+      password: v.required(''),
+      passwordRepeat: v.match('a')('c', { a: 'b' }),
+    },
+    'Expected to follow the validation order',
+  )
 
-  expect(Object.keys(validator({
-    email: 'invalid',
-    password: '12345',
-    passwordRepeat: '',
-  }))).toEqual(['email', 'password', 'passwordRepeat'])
+  expect(
+    Object.keys(
+      validator({
+        email: 'invalid',
+        password: '12345',
+        passwordRepeat: '',
+      }),
+    ),
+  ).toEqual(['email', 'password', 'passwordRepeat'])
 
-  expect(Object.keys(validator({
-    email: 'test@example.com',
-    password: '12345',
-    passwordRepeat: '',
-  }))).toEqual(['password', 'passwordRepeat'])
+  expect(
+    Object.keys(
+      validator({
+        email: 'test@example.com',
+        password: '12345',
+        passwordRepeat: '',
+      }),
+    ),
+  ).toEqual(['password', 'passwordRepeat'])
 
-  expect(Object.keys(validator({
-    email: 'test@example.com',
-    password: '123456',
-    passwordRepeat: '654321',
-  }))).toEqual(['passwordRepeat'])
+  expect(
+    Object.keys(
+      validator({
+        email: 'test@example.com',
+        password: '123456',
+        passwordRepeat: '654321',
+      }),
+    ),
+  ).toEqual(['passwordRepeat'])
 
-  expect(validator({
-    email: 'test@example.com',
-    password: '123456',
-    passwordRepeat: '123456',
-  })).toEqual({})
+  expect(
+    validator({
+      email: 'test@example.com',
+      password: '123456',
+      passwordRepeat: '123456',
+    }),
+  ).toEqual({})
 
   expect(validator()).toEqual({
     email: v.required(''),

@@ -18,9 +18,7 @@ StyledAtom.defaultProps = {
 }
 
 const Atom = ({ ...props }) => {
-  return (
-    <StyledAtom {...props} />
-  )
+  return <StyledAtom {...props} />
 }
 
 export default Atom

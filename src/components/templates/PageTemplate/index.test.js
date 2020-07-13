@@ -2,12 +2,18 @@ import React from 'react'
 import { mount, shallow } from 'enzyme'
 import PageTemplate from '.'
 
-const wrap = (props = {}) => (
-  shallow(<PageTemplate header="header" footer="footer" {...props}>test</PageTemplate>)
+const wrap = (props = {}) => shallow(
+  <PageTemplate header="header" footer="footer" {...props}>
+    test
+  </PageTemplate>,
 )
 
 it('mounts', () => {
-  mount(<PageTemplate header="header" footer="footer">test</PageTemplate>)
+  mount(
+    <PageTemplate header="header" footer="footer">
+      test
+    </PageTemplate>,
+  )
 })
 
 it('renders children when passed in', () => {

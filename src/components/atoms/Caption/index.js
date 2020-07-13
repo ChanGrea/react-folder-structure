@@ -17,10 +17,7 @@ StyledCaption.propTypes = {
 }
 
 const Caption = ({ ...props }) => {
-  return (
-    <StyledCaption {...props} />
-  )
+  return <StyledCaption {...props} />
 }
-
 
 export default Caption

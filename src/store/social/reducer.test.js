@@ -22,5 +22,8 @@ it('handles SOCIAL_LOGIN_SUCCESS', () => {
 it('handles SOCIAL_LOGOUT', () => {
   const action = { type: actions.SOCIAL_LOGOUT }
   expect(reducer(initialState, action)).toEqual(initialState)
-  expect(reducer(altState, action)).toEqual({ ...altState, user: initialState.user })
+  expect(reducer(altState, action)).toEqual({
+    ...altState,
+    user: initialState.user,
+  })
 })

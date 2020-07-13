@@ -22,10 +22,10 @@ const overlayStyles = css`
   z-index: 9999;
   transition: opacity 250ms ease-in-out;
   opacity: 0;
-  &[class*="after-open"] {
+  &[class*='after-open'] {
     opacity: 1;
   }
-  &[class*="before-close"] {
+  &[class*='before-close'] {
     opacity: 0;
   }
 `
@@ -51,15 +51,15 @@ const ModalBox = styled(ReactModal)`
   min-width: 320px;
   max-width: calc(640px - 1rem);
   max-height: calc(100% - 1rem);
-  padding-top: ${({ hasHeader }) => hasHeader ? 0 : '1rem'};
+  padding-top: ${({ hasHeader }) => (hasHeader ? 0 : '1rem')};
   @media screen and (max-width: 640px) {
     width: calc(100% - 1rem);
     min-width: 0;
   }
-  &[class*="after-open"] {
+  &[class*='after-open'] {
     transform: translate(-50%, -50%);
   }
-  &[class*="before-close"] {
+  &[class*='before-close'] {
     transform: translate(-50%, 100%);
   }
 `
@@ -88,7 +88,9 @@ const Content = styled.div`
 
 const StyledReactModal = styled(({ className, ...props }) => (
   <ModalBox overlayClassName={className} closeTimeoutMS={250} {...props} />
-))`${overlayStyles}`
+))`
+  ${overlayStyles}
+`
 
 const Modal = ({
   children, title, closeable, onClose, ...props
@@ -102,16 +104,22 @@ const Modal = ({
       hasHeader={hasHeader}
       {...props}
     >
-      {hasHeader
-        && (
+      {hasHeader && (
         <Header>
-          <StyledHeading level={2} reverse={reverse}>{title}</StyledHeading>
-          {closeable && <IconButton icon="close" onClick={onClose} palette="white" reverse />}
+          <StyledHeading level={2} reverse={reverse}>
+            {title}
+          </StyledHeading>
+          {closeable && (
+            <IconButton
+              icon="close"
+              onClick={onClose}
+              palette="white"
+              reverse
+            />
+          )}
         </Header>
-        )}
-      <Content>
-        {children}
-      </Content>
+      )}
+      <Content>{children}</Content>
       <GlobalStyle />
     </StyledReactModal>
   )

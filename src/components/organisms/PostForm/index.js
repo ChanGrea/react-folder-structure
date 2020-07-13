@@ -17,7 +17,9 @@ const PostForm = ({ handleSubmit, submitting }) => {
       <Heading level={2}>Create a post</Heading>
       <Field name="title" label="Title" component={ReduxField} />
       <Field name="body" label="Body" type="textarea" component={ReduxField} />
-      <Button type="submit" disabled={submitting}>Create</Button>
+      <Button type="submit" disabled={submitting}>
+        Create
+      </Button>
     </Form>
   )
 }

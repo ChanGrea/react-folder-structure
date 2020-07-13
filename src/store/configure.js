@@ -7,18 +7,13 @@ import middlewares from './middlewares'
 import reducer from './reducer'
 import sagas from './sagas'
 
-const devtools = isDev && isBrowser
-  ? composeWithDevTools({})
-  : () => (fn) => fn
+const devtools = isDev && isBrowser ? composeWithDevTools({}) : () => (fn) => fn
 
 const configureStore = (initialState, services = {}) => {
   const sagaMiddleware = createSagaMiddleware()
 
   const enhancers = [
-    applyMiddleware(
-      ...middlewares,
-      sagaMiddleware
-    ),
+    applyMiddleware(...middlewares, sagaMiddleware),
     devtools(),
   ]
 

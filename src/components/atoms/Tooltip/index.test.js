@@ -10,8 +10,10 @@ import Tooltip, {
   borderPosition,
 } from '.'
 
-const wrap = (props = {}) => (
-  shallow(<Tooltip data-title="title" {...props}><span>test</span></Tooltip>)
+const wrap = (props = {}) => shallow(
+  <Tooltip data-title="title" {...props}>
+    <span>test</span>
+  </Tooltip>,
 )
 
 it('renders with different props', () => {

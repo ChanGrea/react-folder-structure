@@ -29,8 +29,6 @@ StyledSpinner.defaultProps = {
 }
 
 const Spinner = ({ ...props }) => {
-  return (
-    <StyledSpinner {...props} />
-  )
+  return <StyledSpinner {...props} />
 }
 export default Spinner

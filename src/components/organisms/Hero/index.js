@@ -88,10 +88,22 @@ const Hero = (props) => {
           <LogoImage height={265} />
           <ButtonGroup>
             <Tooltip reverse data-title="Just a fancy tooltip 😄">
-              <IconButton icon="github" href="https://github.com/diegohaz/arc">GitHub</IconButton>
+              <IconButton icon="github" href="https://github.com/diegohaz/arc">
+                GitHub
+              </IconButton>
             </Tooltip>
-            <Tooltip reverse data-title="Another tooltip aligned differently" align="end" position="bottom">
-              <IconButton icon="docs" href="https://github.com/diegohaz/arc/wiki">Docs</IconButton>
+            <Tooltip
+              reverse
+              data-title="Another tooltip aligned differently"
+              align="end"
+              position="bottom"
+            >
+              <IconButton
+                icon="docs"
+                href="https://github.com/diegohaz/arc/wiki"
+              >
+                Docs
+              </IconButton>
             </Tooltip>
           </ButtonGroup>
         </Section>
@@ -99,18 +111,34 @@ const Hero = (props) => {
           <Text>
             <strong>ARc</strong>
             {' '}
-is a
-            <IconLink reverse icon="react" href="https://facebook.github.io/react/">React</IconLink>
+            is a
+            <IconLink
+              reverse
+              icon="react"
+              href="https://facebook.github.io/react/"
+            >
+              React
+            </IconLink>
             {' '}
-starter kit based on the
-            <IconLink reverse icon="atomic-design" href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</IconLink>
+            starter kit based on the
+            <IconLink
+              reverse
+              icon="atomic-design"
+              href="http://bradfrost.com/blog/post/atomic-web-design/"
+            >
+              Atomic Design
+            </IconLink>
             {' '}
-methodology. It&apos;s
+            methodology. It&apos;s
             <strong>progressive</strong>
-, which means that you can start with the basic boilerplate and try the other features when you are comfortable.
+            , which means that you can start with
+            the basic boilerplate and try the other features when you are
+            comfortable.
           </Text>
           <Instructions>
-            <Heading level={2} reverse>Install</Heading>
+            <Heading level={2} reverse>
+              Install
+            </Heading>
             <PreformattedText block reverse wrapped>
               git clone -b master https://github.com/diegohaz/arc my-app
             </PreformattedText>

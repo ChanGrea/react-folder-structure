@@ -3,7 +3,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fbAppId, googleClientId } from 'config'
 import { fromSocial } from 'store/selectors'
-import { socialLoginPrepare, socialLoginRequest, modalHide } from 'store/actions'
+import {
+  socialLoginPrepare,
+  socialLoginRequest,
+  modalHide,
+} from 'store/actions'
 
 import { LoginModal } from 'components'
 

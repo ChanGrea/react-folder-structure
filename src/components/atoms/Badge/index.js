@@ -23,8 +23,6 @@ StyledBadge.defaultProps = {
 }
 
 const Badge = ({ ...props }) => {
-  return (
-    <StyledBadge {...props} />
-  )
+  return <StyledBadge {...props} />
 }
 export default Badge

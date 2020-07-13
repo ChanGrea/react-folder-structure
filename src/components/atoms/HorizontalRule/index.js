@@ -19,9 +19,7 @@ StyledHorizontalRule.defaultProps = {
 }
 
 const HorizontalRule = ({ ...props }) => {
-  return (
-    <StyledHorizontalRule {...props} />
-  )
+  return <StyledHorizontalRule {...props} />
 }
 
 export default HorizontalRule

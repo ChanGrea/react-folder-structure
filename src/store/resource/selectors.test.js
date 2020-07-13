@@ -22,20 +22,30 @@ test('initialResourceState', () => {
 
 test('getResourceState', () => {
   expect(selectors.getResourceState()).toBe(selectors.initialResourceState)
-  expect(selectors.getResourceState(undefined, 'resources')).toBe(selectors.initialResourceState)
-  expect(selectors.getResourceState(altState, 'resources')).toBe(altState.resources)
+  expect(selectors.getResourceState(undefined, 'resources')).toBe(
+    selectors.initialResourceState,
+  )
+  expect(selectors.getResourceState(altState, 'resources')).toBe(
+    altState.resources,
+  )
 })
 
 test('getList', () => {
   expect(selectors.getList()).toBe(selectors.initialResourceState.list)
   expect(selectors.getList({})).toBe(selectors.initialResourceState.list)
-  expect(selectors.getList(undefined, 'resources')).toBe(selectors.initialResourceState.list)
+  expect(selectors.getList(undefined, 'resources')).toBe(
+    selectors.initialResourceState.list,
+  )
   expect(selectors.getList(altState, 'resources')).toBe(altState.resources.list)
 })
 
 test('getDetail', () => {
   expect(selectors.getDetail()).toBe(selectors.initialResourceState.detail)
   expect(selectors.getDetail({})).toBe(selectors.initialResourceState.detail)
-  expect(selectors.getDetail(undefined, 'resources')).toBe(selectors.initialResourceState.detail)
-  expect(selectors.getDetail(altState, 'resources')).toBe(altState.resources.detail)
+  expect(selectors.getDetail(undefined, 'resources')).toBe(
+    selectors.initialResourceState.detail,
+  )
+  expect(selectors.getDetail(altState, 'resources')).toBe(
+    altState.resources.detail,
+  )
 })

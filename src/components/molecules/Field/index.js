@@ -10,8 +10,8 @@ const Error = styled(Block)`
 
 const Wrapper = styled.div`
   margin-bottom: 1rem;
-  input[type="checkbox"],
-  input[type="radio"] {
+  input[type='checkbox'],
+  input[type='radio'] {
     margin-right: 0.5rem;
   }
   label {
@@ -23,7 +23,12 @@ const Field = ({
   error, name, invalid, label, type, ...props
 }) => {
   const inputProps = {
-    id: name, name, type, invalid, 'aria-describedby': `${name}Error`, ...props,
+    id: name,
+    name,
+    type,
+    invalid,
+    'aria-describedby': `${name}Error`,
+    ...props,
   }
   const renderInputFirst = type === 'checkbox' || type === 'radio'
   return (
@@ -31,12 +36,11 @@ const Field = ({
       {renderInputFirst && <Input {...inputProps} />}
       {label && <Label htmlFor={inputProps.id}>{label}</Label>}
       {renderInputFirst || <Input {...inputProps} />}
-      {invalid && error
-        && (
+      {invalid && error && (
         <Error id={`${name}Error`} role="alert" palette="danger">
           {error}
         </Error>
-        )}
+      )}
     </Wrapper>
   )
 }

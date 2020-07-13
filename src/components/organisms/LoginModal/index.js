@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   }
 `
 class LoginModal extends Component {
+  // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     const { user, onClose } = this.props
     if (!user && nextProps.user) {
@@ -25,8 +26,12 @@ class LoginModal extends Component {
     return (
       <Modal title="Login" name="login" closeable {...props}>
         <Wrapper>
-          <IconButton onClick={onFacebookLogin} icon="facebook">Connect with Facebook</IconButton>
-          <IconButton onClick={onGoogleLogin} icon="google">Connect with Google</IconButton>
+          <IconButton onClick={onFacebookLogin} icon="facebook">
+            Connect with Facebook
+          </IconButton>
+          <IconButton onClick={onGoogleLogin} icon="google">
+            Connect with Google
+          </IconButton>
         </Wrapper>
       </Modal>
     )

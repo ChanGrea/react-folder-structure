@@ -30,32 +30,46 @@ const styles = css`
   border-radius: 0.125em;
   box-sizing: border-box;
   pointer-events: ${ifProp('disabled', 'none', 'auto')};
-  transition: background-color 250ms ease-out, color 250ms ease-out, border-color 250ms ease-out;
+  transition: background-color 250ms ease-out, color 250ms ease-out,
+    border-color 250ms ease-out;
   background-color: ${backgroundColor};
   color: ${foregroundColor};
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: ${hoverBackgroundColor};
     color: ${hoverForegroundColor};
   }
 
   &:focus {
-    outline: none
+    outline: none;
   }
 `
 
-export const StyledLink = styled(({
-  disabled, transparent, reverse, palette, height, theme, ...props
-}) => <Link {...props} />)`${styles}`
+export const StyledLink = styled(
+  ({
+    disabled, transparent, reverse, palette, height, theme, ...props
+  }) => (
+    <Link {...props} />
+  ),
+)`
+  ${styles}
+`
 
-export const Anchor = styled.a`${styles}`
-export const StyledButton = styled.button`${styles}`
+export const Anchor = styled.a`
+  ${styles}
+`
+export const StyledButton = styled.button`
+  ${styles}
+`
 
 const Button = ({ type, ...props }) => {
   const { to, href } = props
   if (to) {
     return <StyledLink {...props} />
-  } if (href) {
+  }
+  if (href) {
     return <Anchor {...props} />
   }
   return <StyledButton {...props} type={type} />

@@ -7,7 +7,9 @@ storiesOf('Heading', module)
     <Heading>Id tempor duis non esse commodo fugiat excepteur nostrud.</Heading>
   ))
   .add('palette', () => (
-    <Heading palette="primary">Id tempor duis non esse commodo fugiat excepteur nostrud.</Heading>
+    <Heading palette="primary">
+      Id tempor duis non esse commodo fugiat excepteur nostrud.
+    </Heading>
   ))
   .add('palette reverse', () => (
     <Heading palette="primary" reverse>
@@ -15,8 +17,12 @@ storiesOf('Heading', module)
     </Heading>
   ))
   .add('level 2', () => (
-    <Heading level={2}>Id tempor duis non esse commodo fugiat excepteur nostrud.</Heading>
+    <Heading level={2}>
+      Id tempor duis non esse commodo fugiat excepteur nostrud.
+    </Heading>
   ))
   .add('level 3', () => (
-    <Heading level={3}>Id tempor duis non esse commodo fugiat excepteur nostrud.</Heading>
+    <Heading level={3}>
+      Id tempor duis non esse commodo fugiat excepteur nostrud.
+    </Heading>
   ))

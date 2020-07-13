@@ -53,19 +53,27 @@ it('execute backgroundColor Function with transparency', () => {
 })
 
 it('execute backgroundColor Function  without transparency', () => {
-  expect(backgroundColor({ transparent: false, disabled: false })).toBeInstanceOf(Function)
+  expect(
+    backgroundColor({ transparent: false, disabled: false }),
+  ).toBeInstanceOf(Function)
 })
 
 it('execute backgroundColor Function  without transparency', () => {
-  expect(backgroundColor({ transparent: false, disabled: true })).toBeInstanceOf(Function)
+  expect(
+    backgroundColor({ transparent: false, disabled: true }),
+  ).toBeInstanceOf(Function)
 })
 
 it('execute foregroundColor Function', () => {
-  expect(foregroundColor({ transparent: true, disabled: true })).toBeInstanceOf(Function)
+  expect(foregroundColor({ transparent: true, disabled: true })).toBeInstanceOf(
+    Function,
+  )
 })
 
 it('execute foregroundColor Function', () => {
-  expect(foregroundColor({ transparent: true, disabled: false })).toBeInstanceOf(Function)
+  expect(
+    foregroundColor({ transparent: true, disabled: false }),
+  ).toBeInstanceOf(Function)
 })
 
 it('execute foregroundColor Function', () => {
@@ -73,15 +81,21 @@ it('execute foregroundColor Function', () => {
 })
 
 it('execute hoverBackgroundColor Function', () => {
-  expect(hoverBackgroundColor({ transparent: false, disabled: false })).toBeInstanceOf(Function)
+  expect(
+    hoverBackgroundColor({ transparent: false, disabled: false }),
+  ).toBeInstanceOf(Function)
 })
 
 it('execute hoverForegroundColor Function', () => {
-  expect(hoverForegroundColor({ transparent: false, disabled: false })).toBe(false)
+  expect(hoverForegroundColor({ transparent: false, disabled: false })).toBe(
+    false,
+  )
 })
 
 it('execute hoverForegroundColor Function with transparency', () => {
-  expect(hoverForegroundColor({ transparent: true, disabled: false })).toBeInstanceOf(Function)
+  expect(
+    hoverForegroundColor({ transparent: true, disabled: false }),
+  ).toBeInstanceOf(Function)
 })
 
 it('execute hoverForegroundColor Function with transparency', () => {

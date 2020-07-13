@@ -33,9 +33,16 @@ export const appendFbRoot = () => {
 
 export const serviceAction = (suffix, service) => ({ type, payload }) => type === `SOCIAL_LOGIN_${suffix}` && payload && payload.service === service
 
-export function* loginFacebook({ scope = 'public_profile', fields = 'id,name', ...options } = {}) {
+export function* loginFacebook({
+  scope = 'public_profile',
+  fields = 'id,name',
+  ...options
+} = {}) {
   const request = {
-    service: 'facebook', scope, fields, ...options,
+    service: 'facebook',
+    scope,
+    fields,
+    ...options,
   }
   try {
     yield call(promises.fbLogin, { scope, ...options })
@@ -49,12 +56,19 @@ export function* loginFacebook({ scope = 'public_profile', fields = 'id,name', .
 
 export function* prepareFacebook({ clientId, version = 'v2.8', ...options }) {
   const request = {
-    service: 'facebook', clientId, version, ...options,
+    service: 'facebook',
+    clientId,
+    version,
+    ...options,
   }
   try {
     yield call(appendFbRoot)
     yield call(loadScript, '//connect.facebook.net/en_US/sdk.js')
-    yield call([window.FB, window.FB.init], { appId: clientId, version, ...options })
+    yield call([window.FB, window.FB.init], {
+      appId: clientId,
+      version,
+      ...options,
+    })
   } catch (e) {
     yield put(actions.socialLoginFailure(e, request))
   }

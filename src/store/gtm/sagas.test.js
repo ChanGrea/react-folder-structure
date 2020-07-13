@@ -28,8 +28,9 @@ describe('track', () => {
   it('calls failure', () => {
     const generator = sagas.track('FOO')
     expect(generator.next().value).toEqual({ event: 'FOO' })
-    expect(generator.throw('error').value)
-      .toEqual(put(actions.gtmFailure('error', { event: 'FOO' })))
+    expect(generator.throw('error').value).toEqual(
+      put(actions.gtmFailure('error', { event: 'FOO' })),
+    )
   })
 })
 
@@ -38,17 +39,20 @@ describe('startGTM', () => {
 
   it('calls success', () => {
     const generator = sagas.startGTM(payload)
-    expect(generator.next().value)
-      .toEqual(call(loadScript, '//www.googletagmanager.com/gtm.js?id=foo'))
+    expect(generator.next().value).toEqual(
+      call(loadScript, '//www.googletagmanager.com/gtm.js?id=foo'),
+    )
     expect(generator.next().done).toBe(true)
   })
 
   it('calls failure', () => {
     const generator = sagas.startGTM(payload)
-    expect(generator.next().value)
-      .toEqual(call(loadScript, '//www.googletagmanager.com/gtm.js?id=foo'))
-    expect(generator.throw('foo').value)
-      .toEqual(put(actions.gtmFailure('foo', payload)))
+    expect(generator.next().value).toEqual(
+      call(loadScript, '//www.googletagmanager.com/gtm.js?id=foo'),
+    )
+    expect(generator.throw('foo').value).toEqual(
+      put(actions.gtmFailure('foo', payload)),
+    )
   })
 })
 
@@ -63,10 +67,9 @@ test('watchGTMStart', () => {
   const payload = { gtmId: 'foo' }
   const generator = sagas.watchGTMStart()
   expect(generator.next().value).toEqual(take(actions.GTM_START))
-  expect(generator.next({ payload }).value).toEqual(all([
-    call(sagas.startGTM, payload),
-    call(sagas.watchAllActions),
-  ]))
+  expect(generator.next({ payload }).value).toEqual(
+    all([call(sagas.startGTM, payload), call(sagas.watchAllActions)]),
+  )
 })
 
 test('saga', () => {

@@ -15,18 +15,24 @@ export const checkStatus = (response) => {
 export const parseJSON = (response) => response.json()
 
 export const parseSettings = ({
-  method = 'get', data, locale, ...otherSettings
+  method = 'get',
+  data,
+  locale,
+  ...otherSettings
 } = {}) => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
     'Accept-Language': locale,
   }
-  const settings = merge({
-    body: data ? JSON.stringify(data) : undefined,
-    method,
-    headers,
-  }, otherSettings)
+  const settings = merge(
+    {
+      body: data ? JSON.stringify(data) : undefined,
+      method,
+      headers,
+    },
+    otherSettings,
+  )
   return settings
 }
 

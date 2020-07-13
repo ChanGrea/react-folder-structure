@@ -5,11 +5,12 @@ import { Field } from 'components'
 
 const ReduxField = ({ meta, input, ...props }) => {
   const fieldProps = {
-    ...props, ...input, invalid: meta.touched && !!meta.error, error: meta.error,
+    ...props,
+    ...input,
+    invalid: meta.touched && !!meta.error,
+    error: meta.error,
   }
-  return (
-    <Field {...fieldProps} />
-  )
+  return <Field {...fieldProps} />
 }
 
 ReduxField.propTypes = {

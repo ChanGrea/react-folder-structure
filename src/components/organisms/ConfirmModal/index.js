@@ -28,8 +28,12 @@ const ConfirmModal = ({
     <Modal {...props}>
       {children || 'Do you want to proceed?'}
       <Options>
-        <Button onClick={onConfirm} {...confirmProps}>{confirmLabel}</Button>
-        <Button onClick={onClose} transparent {...cancelProps}>{cancelLabel}</Button>
+        <Button onClick={onConfirm} {...confirmProps}>
+          {confirmLabel}
+        </Button>
+        <Button onClick={onClose} transparent {...cancelProps}>
+          {cancelLabel}
+        </Button>
       </Options>
     </Modal>
   )

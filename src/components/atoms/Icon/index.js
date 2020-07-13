@@ -29,7 +29,9 @@ const Wrapper = styled.span`
 
 const Icon = ({ icon, ...props }) => {
   const svg = require(`!raw-loader!./icons/${icon}.svg`)
-  return <Wrapper {...props} dangerouslySetInnerHTML={{ __html: svg.default }} />
+  return (
+    <Wrapper {...props} dangerouslySetInnerHTML={{ __html: svg.default }} />
+  )
 }
 
 Icon.propTypes = {

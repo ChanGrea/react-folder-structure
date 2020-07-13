@@ -17,7 +17,9 @@ export function* createResource(api, { data }, { resource, thunk }) {
 export function* readResourceList(api, { params }, { resource, thunk }) {
   try {
     const list = yield call([api, api.get], `/${resource}`, { params })
-    yield put(actions.resourceListReadSuccess(resource, list, { params }, thunk))
+    yield put(
+      actions.resourceListReadSuccess(resource, list, { params }, thunk),
+    )
   } catch (e) {
     yield put(actions.resourceListReadFailure(resource, e, { params }, thunk))
   }
@@ -26,7 +28,9 @@ export function* readResourceList(api, { params }, { resource, thunk }) {
 export function* readResourceDetail(api, { needle }, { resource, thunk }) {
   try {
     const detail = yield call([api, api.get], `/${resource}/${needle}`)
-    yield put(actions.resourceDetailReadSuccess(resource, detail, { needle }, thunk))
+    yield put(
+      actions.resourceDetailReadSuccess(resource, detail, { needle }, thunk),
+    )
   } catch (e) {
     yield put(actions.resourceDetailReadFailure(resource, e, { needle }, thunk))
   }
@@ -35,9 +39,13 @@ export function* readResourceDetail(api, { needle }, { resource, thunk }) {
 export function* updateResource(api, { needle, data }, { resource, thunk }) {
   try {
     const detail = yield call([api, api.put], `/${resource}/${needle}`, data)
-    yield put(actions.resourceUpdateSuccess(resource, detail, { needle, data }, thunk))
+    yield put(
+      actions.resourceUpdateSuccess(resource, detail, { needle, data }, thunk),
+    )
   } catch (e) {
-    yield put(actions.resourceUpdateFailure(resource, e, { needle, data }, thunk))
+    yield put(
+      actions.resourceUpdateFailure(resource, e, { needle, data }, thunk),
+    )
   }
 }
 
@@ -71,9 +79,29 @@ export function* watchResourceDeleteRequest(api, { payload, meta }) {
 }
 
 export default function* ({ api }) {
-  yield takeEvery(actions.RESOURCE_CREATE_REQUEST, watchResourceCreateRequest, api)
-  yield takeEvery(actions.RESOURCE_LIST_READ_REQUEST, watchResourceListReadRequest, api)
-  yield takeEvery(actions.RESOURCE_DETAIL_READ_REQUEST, watchResourceDetailReadRequest, api)
-  yield takeEvery(actions.RESOURCE_UPDATE_REQUEST, watchResourceUpdateRequest, api)
-  yield takeEvery(actions.RESOURCE_DELETE_REQUEST, watchResourceDeleteRequest, api)
+  yield takeEvery(
+    actions.RESOURCE_CREATE_REQUEST,
+    watchResourceCreateRequest,
+    api,
+  )
+  yield takeEvery(
+    actions.RESOURCE_LIST_READ_REQUEST,
+    watchResourceListReadRequest,
+    api,
+  )
+  yield takeEvery(
+    actions.RESOURCE_DETAIL_READ_REQUEST,
+    watchResourceDetailReadRequest,
+    api,
+  )
+  yield takeEvery(
+    actions.RESOURCE_UPDATE_REQUEST,
+    watchResourceUpdateRequest,
+    api,
+  )
+  yield takeEvery(
+    actions.RESOURCE_DELETE_REQUEST,
+    watchResourceDeleteRequest,
+    api,
+  )
 }

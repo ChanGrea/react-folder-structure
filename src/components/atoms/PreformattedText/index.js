@@ -27,10 +27,7 @@ StyledPreformattedText.defaultProps = {
 }
 
 const PreformattedText = ({ ...props }) => {
-  return (
-    <StyledPreformattedText {...props} />
-  )
+  return <StyledPreformattedText {...props} />
 }
-
 
 export default PreformattedText

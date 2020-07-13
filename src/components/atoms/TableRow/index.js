@@ -15,9 +15,7 @@ StyledTableRow.propTypes = {
 }
 
 const TableRow = ({ ...props }) => {
-  return (
-    <StyledTableRow {...props} />
-  )
+  return <StyledTableRow {...props} />
 }
 
 export default TableRow

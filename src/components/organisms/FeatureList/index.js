@@ -39,9 +39,12 @@ const FeatureList = ({ ...props }) => (
   <div {...props}>
     <StyledHeading>Basic stack</StyledHeading>
     <Description>
-      It includes everything necessary to build a tipical web app with focus on productivity and developer experience.
+      It includes everything necessary to build a tipical web app with focus on
+      productivity and developer experience.
       <br />
-      <Link href="https://github.com/diegohaz/arc/wiki/Workflow">Learn more about the recomended workflow</Link>
+      <Link href="https://github.com/diegohaz/arc/wiki/Workflow">
+        Learn more about the recomended workflow
+      </Link>
     </Description>
     <Grid>
       <StyledFeature
@@ -50,7 +53,8 @@ const FeatureList = ({ ...props }) => (
         title="React"
         code="<MyComponent attr='value' />"
       >
-        The Facebook&apos;s JavaScript library for building user interfaces using components.
+        The Facebook&apos;s JavaScript library for building user interfaces
+        using components.
       </StyledFeature>
       <StyledFeature
         icon="react-router"
@@ -68,9 +72,11 @@ const FeatureList = ({ ...props }) => (
       >
         The awesome module bundler with
         {' '}
-        <Link href="https://webpack.github.io/docs/hot-module-replacement.html">Hot Module Replacement</Link>
+        <Link href="https://webpack.github.io/docs/hot-module-replacement.html">
+          Hot Module Replacement
+        </Link>
         {' '}
-enabled.
+        enabled.
       </StyledFeature>
       <StyledFeature
         icon="jest"
@@ -78,12 +84,14 @@ enabled.
         title="Jest"
         code="npm run test"
       >
-        The great testing framework used by Facebook to test all their Javascript code.
+        The great testing framework used by Facebook to test all their
+        Javascript code.
       </StyledFeature>
     </Grid>
     <StyledHeading>Optional features</StyledHeading>
     <Description>
-      Features separated into another branches so you can use them only if you need to.
+      Features separated into another branches so you can use them only if you
+      need to.
     </Description>
     <Grid>
       <StyledFeature

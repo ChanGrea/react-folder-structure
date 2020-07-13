@@ -9,11 +9,7 @@ const Wrapper = styled.div`
 `
 
 const Molecule = ({ children, ...props }) => {
-  return (
-    <Wrapper {...props}>
-      {children}
-    </Wrapper>
-  )
+  return <Wrapper {...props}>{children}</Wrapper>
 }
 
 Molecule.propTypes = {

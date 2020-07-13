@@ -38,8 +38,9 @@ describe('parseSettings', () => {
   })
 
   it('has data body', () => {
-    expect(parseSettings({ data: { foo: 'bar' } }).body)
-      .toBe(JSON.stringify({ foo: 'bar' }))
+    expect(parseSettings({ data: { foo: 'bar' } }).body).toBe(
+      JSON.stringify({ foo: 'bar' }),
+    )
   })
 
   it('has passed method', () => {
@@ -50,8 +51,9 @@ describe('parseSettings', () => {
     const otherSettings = { headers: { foo: 'bar' } }
     const settings = parseSettings(otherSettings)
     expect(settings).toHaveProperty('headers.foo', 'bar')
-    expect(Object.keys(settings.headers).length)
-      .toBeGreaterThan(Object.keys(otherSettings.headers).length)
+    expect(Object.keys(settings.headers).length).toBeGreaterThan(
+      Object.keys(otherSettings.headers).length,
+    )
   })
 })
 
@@ -61,7 +63,9 @@ describe('parseEndpoint', () => {
   })
 
   it('parses params', () => {
-    expect(parseEndpoint('/foo', { bar: 'baz' })).toBe('https://api.foo.com/foo?bar=baz')
+    expect(parseEndpoint('/foo', { bar: 'baz' })).toBe(
+      'https://api.foo.com/foo?bar=baz',
+    )
   })
 
   it('parses url other than apiUrl', () => {
@@ -84,7 +88,7 @@ describe('api', () => {
       'https://api.foo.com/foo',
       expect.objectContaining({
         method: 'get',
-      })
+      }),
     )
   });
   ['delete', 'get', 'post', 'put', 'patch'].forEach((method) => {
@@ -93,7 +97,7 @@ describe('api', () => {
       await api[method]('/foo')
       expect(global.fetch).toHaveBeenCalledWith(
         'https://api.foo.com/foo',
-        expect.objectContaining({ method })
+        expect.objectContaining({ method }),
       )
     })
   })

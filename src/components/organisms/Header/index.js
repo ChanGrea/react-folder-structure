@@ -25,7 +25,7 @@ const InnerWrapper = styled.div`
 `
 
 const StyledPrimaryNavigation = styled(PrimaryNavigation)`
-  flex: 1
+  flex: 1;
 `
 
 const Header = (props) => {

@@ -34,5 +34,8 @@ it('handles MODAL_HIDE', () => {
   const payload = { name: 'modal1' }
   expect(reducer(initialState, action)).toEqual(initialState)
   expect(reducer(altState, action)).toEqual(initialState)
-  expect(reducer(altState, { ...action, payload })).toEqual({ ...altState, modal1: false })
+  expect(reducer(altState, { ...action, payload })).toEqual({
+    ...altState,
+    modal1: false,
+  })
 })

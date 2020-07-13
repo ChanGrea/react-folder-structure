@@ -13,7 +13,9 @@ const Wrapper = styled.span`
 const LogoImage = (props) => {
   const logo = 'logo'
   const svg = require(`!raw-loader!./${logo}.svg`)
-  return <Wrapper {...props} dangerouslySetInnerHTML={{ __html: svg.default }} />
+  return (
+    <Wrapper {...props} dangerouslySetInnerHTML={{ __html: svg.default }} />
+  )
 }
 
 export default LogoImage

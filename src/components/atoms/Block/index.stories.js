@@ -4,13 +4,19 @@ import Block from '.'
 
 storiesOf('Block', module)
   .add('default', () => (
-    <Block>Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.</Block>
+    <Block>
+      Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.
+    </Block>
   ))
   .add('reverse', () => (
-    <Block reverse>Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.</Block>
+    <Block reverse>
+      Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.
+    </Block>
   ))
   .add('palette', () => (
-    <Block palette="primary">Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.</Block>
+    <Block palette="primary">
+      Officia aliqua reprehenderit fugiat occaecat quis non eiusmod.
+    </Block>
   ))
   .add('palette reverse', () => (
     <Block palette="primary" reverse>

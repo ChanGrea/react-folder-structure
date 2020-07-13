@@ -4,7 +4,12 @@ import styled from 'styled-components'
 import { ifProp } from 'styled-tools'
 
 import {
-  Icon, Link, Paragraph, Heading, Badge, PreformattedText,
+  Icon,
+  Link,
+  Paragraph,
+  Heading,
+  Badge,
+  PreformattedText,
 } from 'components'
 
 const Wrapper = styled.div`

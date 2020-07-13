@@ -23,7 +23,7 @@ const Footer = (props) => {
         {' '}
         <Icon icon="heart" />
         {' '}
-by
+        by
         {' '}
         <Link href="https://github.com/diegohaz">Haz</Link>
       </Credits>

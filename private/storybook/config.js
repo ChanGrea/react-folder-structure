@@ -26,7 +26,7 @@ addDecorator((story) => (
 addDecorator(
   withInfo({
     header: false, // Global configuration for the info addon across all of your stories.
-  })
+  }),
 )
 
 configure(loadStories, module)

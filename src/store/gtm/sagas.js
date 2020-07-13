@@ -41,10 +41,7 @@ export function* watchAllActions() {
 
 export function* watchGTMStart() {
   const { payload } = yield take(actions.GTM_START)
-  yield all([
-    call(startGTM, payload),
-    call(watchAllActions),
-  ])
+  yield all([call(startGTM, payload), call(watchAllActions)])
 }
 
 export default function* () {

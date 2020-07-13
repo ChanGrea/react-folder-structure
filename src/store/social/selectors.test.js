@@ -10,5 +10,7 @@ test('initialState', () => {
 
 test('getUser', () => {
   expect(selectors.getUser()).toEqual(selectors.initialState.user)
-  expect(selectors.getUser(selectors.initialState)).toEqual(selectors.initialState.user)
+  expect(selectors.getUser(selectors.initialState)).toEqual(
+    selectors.initialState.user,
+  )
 })

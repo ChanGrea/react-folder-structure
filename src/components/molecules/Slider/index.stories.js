@@ -3,9 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { Slider } from 'components'
 
 storiesOf('Slider', module)
-  .add('default', () => (
-    <Slider />
-  ))
+  .add('default', () => <Slider />)
   .add('reverse', () => (
     <Slider reverse min={0} max={10} step={0.05} defaultValue={5} />
   ))
@@ -13,5 +11,12 @@ storiesOf('Slider', module)
     <Slider disabled min={0} max={10} step={0.05} defaultValue={5} />
   ))
   .add('responsive with breakpoint', () => (
-    <Slider responsive min={0} max={10} step={0.05} defaultValue={5} breakpoint={450} />
+    <Slider
+      responsive
+      min={0}
+      max={10}
+      step={0.05}
+      defaultValue={5}
+      breakpoint={450}
+    />
   ))

@@ -15,9 +15,7 @@ StyledLabel.propTypes = {
 }
 
 const Label = ({ ...props }) => {
-  return (
-    <StyledLabel {...props} />
-  )
+  return <StyledLabel {...props} />
 }
 
 export default Label

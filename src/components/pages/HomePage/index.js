@@ -7,11 +7,7 @@ import {
 
 const HomePage = () => {
   return (
-    <PageTemplate
-      header={<Header />}
-      hero={<Hero />}
-      footer={<Footer />}
-    >
+    <PageTemplate header={<Header />} hero={<Hero />} footer={<Footer />}>
       <FeatureList />
     </PageTemplate>
   )

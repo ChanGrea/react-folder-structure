@@ -15,7 +15,6 @@ import {
   RESOURCE_DELETE_SUCCESS,
 } from './actions'
 
-
 const updateOrDeleteReducer = (state, { type, payload, meta }) => {
   const resource = get(meta, 'resource')
   const needle = get(meta, 'request.needle')
@@ -45,10 +44,7 @@ const updateOrDeleteReducer = (state, { type, payload, meta }) => {
         ...state,
         [resource]: {
           ...getResourceState(state, resource),
-          list: [
-            ...list.slice(0, index),
-            ...list.slice(index + 1),
-          ],
+          list: [...list.slice(0, index), ...list.slice(index + 1)],
         },
       }
     // istanbul ignore next

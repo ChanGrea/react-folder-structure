@@ -21,9 +21,7 @@ StyledBlock.defaultProps = {
 }
 
 const Block = ({ ...props }) => {
-  return (
-    <StyledBlock {...props} />
-  )
+  return <StyledBlock {...props} />
 }
 
 export default Block

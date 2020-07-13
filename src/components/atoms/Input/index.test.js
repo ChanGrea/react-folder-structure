@@ -1,10 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Input, {
-  StyledTextarea,
-  StyledSelect,
-  StyledInput,
-  fontSize,
+  StyledTextarea, StyledSelect, StyledInput, fontSize,
 } from '.'
 
 const wrap = (props = {}) => shallow(<Input {...props} />)

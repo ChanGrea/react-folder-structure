@@ -42,7 +42,7 @@ const Range = styled.input`
     outline: none;
   }
 
-  ${''/* Thumb */}
+  ${''}
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -53,7 +53,7 @@ const Range = styled.input`
     border-radius: ${borderRadius};
     cursor: pointer;
     margin-top: -0.53em;
-    transition: background .15s ease-in-out;
+    transition: background 0.15s ease-in-out;
     &:hover {
       background: ${hoverThumbColor};
     }
@@ -66,7 +66,7 @@ const Range = styled.input`
     border: ${border};
     border-radius: ${borderRadius};
     cursor: pointer;
-    transition: background .15s ease-in-out;
+    transition: background 0.15s ease-in-out;
     &:hover {
       background: ${hoverThumbColor};
     }
@@ -80,7 +80,7 @@ const Range = styled.input`
     border-radius: ${borderRadius};
   }
 
-  ${''/* Track */}
+  ${''}
 
   &::-webkit-slider-runnable-track {
     width: 100%;
@@ -115,7 +115,7 @@ const Range = styled.input`
   &::-ms-fill-upper {
     background: ${barColor};
     border: ${border};
-    border-radius: ${borderRadius}
+    border-radius: ${borderRadius};
   }
 `
 
@@ -132,9 +132,20 @@ const Slider = ({
   const { breakpoint, responsive } = props
   return (
     <Wrapper {...props}>
-      <Text responsive={responsive} breakpoint={breakpoint}>{min}</Text>
-      <Range id={id} min={min} max={max} defaultValue={defaultValue} step={step} {...props} />
-      <Text responsive={responsive} breakpoint={breakpoint}>{max}</Text>
+      <Text responsive={responsive} breakpoint={breakpoint}>
+        {min}
+      </Text>
+      <Range
+        id={id}
+        min={min}
+        max={max}
+        defaultValue={defaultValue}
+        step={step}
+        {...props}
+      />
+      <Text responsive={responsive} breakpoint={breakpoint}>
+        {max}
+      </Text>
     </Wrapper>
   )
 }

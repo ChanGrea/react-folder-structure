@@ -9,7 +9,9 @@ storiesOf('UserButton', module)
   ))
   .add('with user', () => (
     <UserButton
-      user={{ picture: 'https://avatars3.githubusercontent.com/u/3068563?v=3&s=460' }}
+      user={{
+        picture: 'https://avatars3.githubusercontent.com/u/3068563?v=3&s=460',
+      }}
       onLogin={action('login')}
       onLogout={action('logout')}
     />

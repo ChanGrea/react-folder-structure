@@ -16,9 +16,7 @@ StyledParagraph.propTypes = {
 }
 
 const Paragraph = ({ ...props }) => {
-  return (
-    <StyledParagraph {...props} />
-  )
+  return <StyledParagraph {...props} />
 }
 
 export default Paragraph

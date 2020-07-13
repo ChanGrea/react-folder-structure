@@ -86,7 +86,12 @@ export const resourceDetailReadRequest = (resource, needle) => ({
   },
 })
 
-export const resourceDetailReadSuccess = (resource, detail, request, thunk) => ({
+export const resourceDetailReadSuccess = (
+  resource,
+  detail,
+  request,
+  thunk,
+) => ({
   type: RESOURCE_DETAIL_READ_SUCCESS,
   payload: detail,
   meta: {

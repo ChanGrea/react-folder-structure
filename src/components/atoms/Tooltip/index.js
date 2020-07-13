@@ -21,20 +21,27 @@ export const perpendicularAxis = ({ position }) => position === 'left' || positi
 
 export const align = ({ align }) => {
   switch (align) {
-    case 'start': return css`
+    case 'start':
+      return css`
         ${perpendicular}: 0;
       `
-    case 'center': return css`
+    case 'center':
+      return css`
         ${perpendicular}: 50%;
-        transform: translate${perpendicularAxis}(-50%);
+        transform: translate ${perpendicularAxis} (-50%);
       `
-    default: return css`
+    default:
+      return css`
         ${perpendicularOpposite}: 0;
       `
   }
 }
 export const borderPosition = ({ position }) => position
-const backgroundColor = ifProp('reverse', 'rgba(255, 255, 255, 0.85)', 'rgba(0, 0, 0, 0.85)')
+const backgroundColor = ifProp(
+  'reverse',
+  'rgba(255, 255, 255, 0.85)',
+  'rgba(0, 0, 0, 0.85)',
+)
 
 const styles = css`
   position: relative;
@@ -90,9 +97,13 @@ const styles = css`
   }
   `
 
-export const StyledTooltip = styled(({
-  position, align, reverse, children, theme, ...props
-}) => React.cloneElement(children, props))`${styles}`
+export const StyledTooltip = styled(
+  ({
+    position, align, reverse, children, theme, ...props
+  }) => React.cloneElement(children, props),
+)`
+  ${styles}
+`
 
 StyledTooltip.propTypes = {
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
@@ -109,9 +120,7 @@ StyledTooltip.defaultProps = {
 }
 
 const Tooltip = ({ ...props }) => {
-  return (
-    <StyledTooltip {...props} />
-  )
+  return <StyledTooltip {...props} />
 }
 
 export default Tooltip

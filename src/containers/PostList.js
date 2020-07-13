@@ -8,6 +8,7 @@ import { resourceListReadRequest } from 'store/actions'
 import { PostList } from 'components'
 
 class PostListContainer extends Component {
+  // eslint-disable-next-line react/no-deprecated
   componentWillMount() {
     const { readList } = this.props
     readList()
@@ -20,7 +21,11 @@ class PostListContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  list: fromEntities.getList(state, 'posts', fromResource.getList(state, 'posts')),
+  list: fromEntities.getList(
+    state,
+    'posts',
+    fromResource.getList(state, 'posts'),
+  ),
   loading: pending(state, 'postsListRead'),
   failed: rejected(state, 'postsListRead'),
 })
@@ -28,7 +33,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch, { limit }) => ({
   readList: () => dispatch(resourceListReadRequest('posts', { _limit: limit })),
 })
-
 
 PostListContainer.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object).isRequired,

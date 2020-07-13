@@ -17,9 +17,15 @@ const styles = css`
 
 export const StyledNavLink = styled(({
   theme, reverse, palette, ...props
-}) => <NavLink {...props} />)`${styles}`
+}) => (
+  <NavLink {...props} />
+))`
+  ${styles}
+`
 
-export const Anchor = styled.a`${styles}`
+export const Anchor = styled.a`
+  ${styles}
+`
 
 const Link = ({ ...props }) => {
   const { to } = props

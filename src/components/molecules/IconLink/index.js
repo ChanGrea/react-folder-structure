@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { Icon, Link } from 'components'
 
-const fontSize = ({ height }) => height ? `${height / 3 / 16}rem` : '0.75em'
+const fontSize = ({ height }) => (height ? `${height / 3 / 16}rem` : '0.75em')
 
 const margin = ({ hasText, right }) => {
   if (hasText) {

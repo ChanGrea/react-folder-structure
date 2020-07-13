@@ -21,7 +21,9 @@ it('handles actions', () => {
     type: ENTITIES_RECEIVE,
     payload,
   })
-  expect(reducer(initialState, createAction({ foo: altState.foo }))).toEqual(altState)
+  expect(reducer(initialState, createAction({ foo: altState.foo }))).toEqual(
+    altState,
+  )
   expect(reducer(altState, createAction({ foo: { bars: [4] } }))).toEqual({
     ...altState,
     foo: {
